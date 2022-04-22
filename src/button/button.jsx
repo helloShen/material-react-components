@@ -54,6 +54,7 @@ class Button extends React.Component {
       size,
       primary,
       surface,
+      clickCallback,
     } = this.props;
     const {
       pressed,
@@ -106,7 +107,10 @@ class Button extends React.Component {
         className={classNames}
         role="button"
         tabIndex={0}
-        onMouseDown={this.handleMouseDown}
+        onMouseDown={() => {
+          this.handleMouseDown();
+          clickCallback();
+        }}
         onMouseUp={this.handleMouseUp}
         onMouseEnter={this.handleMouseEnter}
         onMouseLeave={this.handleMouseLeave}

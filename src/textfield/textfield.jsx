@@ -16,27 +16,20 @@ class TextField extends React.Component {
   constructor(props) {
     super(props);
     this.id = TextField.generateId();
-    this.error = 'error';
-    this.handleChange = this.handleChange.bind(this);
+    this.pattern = new RegExp(props.pattern, 'g');
+    this.error = `error: ${props.helper}`;
     this.handleFocus = this.handleFocus.bind(this);
     this.handleBlur = this.handleBlur.bind(this);
     this.handleMouseEnter = this.handleMouseEnter.bind(this);
     this.handleMouseLeave = this.handleMouseLeave.bind(this);
+    const activated = !!((props.text && props.text.length > 0));
     this.state = {
-      value: '',
-      activated: false,
+      activated,
       focused: false,
       hover: false,
       disabled: false,
       error: false,
     };
-  }
-
-  handleChange(e) {
-    const currentValue = e.target.value;
-    this.setState({
-      value: currentValue,
-    });
   }
 
   handleFocus() {
@@ -50,6 +43,7 @@ class TextField extends React.Component {
     if (e.target.value.length > 0) {
       this.setState({
         focused: false,
+        error: !this.isValid(e.target.value),
       });
     } else {
       this.setState({
@@ -57,6 +51,10 @@ class TextField extends React.Component {
         focused: false,
       });
     }
+  }
+
+  static handleKeyDown(e) {
+    if (e.key === 'Enter') e.target.blur();
   }
 
   handleMouseEnter() {
@@ -77,14 +75,19 @@ class TextField extends React.Component {
     });
   }
 
+  isValid(content) {
+    return content.match(this.pattern);
+  }
+
   render() {
     const {
       label,
       helper,
       primary,
+      text,
+      handleChange,
     } = this.props;
     const {
-      value,
       activated,
       focused,
       hover,
@@ -116,9 +119,10 @@ class TextField extends React.Component {
       >
         <span className="smui-textfield__label">{label}</span>
         <input
-          value={value}
+          value={text}
           className="smui-textfield__input"
-          onChange={this.handleChange}
+          onChange={handleChange}
+          onKeyDown={TextField.handleKeyDown}
           type="text"
           id={id}
         />

@@ -24,7 +24,8 @@
   /* box */
   box-sizing: border-box;
   height: var(--height);
-  max-width: var(--width);
+  width: var(--width);
+  /* max-width: var(--width); */
   padding: .5rem 0;
   padding-left: 1rem;
   padding-right: .75rem;
@@ -63,7 +64,7 @@
   top: calc(3rem + 2px);
   left: 1rem;
   height: 1rem;
-  width: calc(var(--height) - 1.75rem);
+  width: calc(var(--width) - 1.75rem);
   /* font */
   font-size: .75rem;
   color: var(--gray-2);
@@ -124,6 +125,7 @@
   align-self: end;
   justify-self: start;
   /* style */
+  width: var(--width);
   color: var(--gray-3);
   background-color: transparent;
   outline: none;

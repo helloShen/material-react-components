@@ -12,11 +12,7 @@ export default class Card extends React.Component {
     this.handleFocus = this.handleFocus.bind(this);
     this.handleBlur = this.handleBlur.bind(this);
     this.state = {
-      activated: false,
-      focused: false,
       hover: false,
-      disabled: false,
-      error: false,
     };
   }
 
@@ -77,6 +73,22 @@ export default class Card extends React.Component {
       </div>
     );
   }
+}
+
+export function CardMain({ children }) {
+  return (
+    <div className="smui-card__main">
+      {children}
+    </div>
+  );
+}
+
+export function CardAvatar({ children }) {
+  return (
+    <div className="smui-card__avatar">
+      {children}
+    </div>
+  );
 }
 
 export function CardTitle({ children }) {
