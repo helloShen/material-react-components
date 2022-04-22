@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;700;900&family=Roboto+Slab:wght@100;400;700;900&family=Roboto:wght@100;400;700;900&display=swap');
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+
+.smui-btn {
+  /* variable */
+  --primary: #000000;
+  --surface: #ffffff;
+  /* box */
+  box-sizing: border-box; 
+  min-width: 4rem;
+  height: 2.25rem;
+  padding: 0 1rem;
+  position: relative; 
+  /* font */
+  font-size: 1rem;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  /* user */
+  user-select: none;
+  cursor: pointer;
+  /* animation */
+  transition: all .15s ease-in-out;
+  /* display */
+  display: grid;
+  align-items: center;
+  justify-items: center;
+}
+
+.smui-btn.smui-lg {
+  min-width: 5rem;
+  height: 2.75rem;
+  padding: 0 1.5rem;
+}
+
+.smui-btn.smui-sm {
+  min-width: 3rem;
+  height: 1.75rem;
+  padding: 0 .5rem;
+}
+
+.smui-btn.smui-contained {
+  color: var(--surface);
+  background-color: var(--primary);
+  border-radius: 3px;
+  box-shadow: 0px 3px 1px -2px #00000033,
+    0px 2px 2px #00000022,
+    0px 1px 5px #00000022;
+}
+
+.smui-btn.smui-contained.smui-hover {
+  box-shadow: 0px 2px 4px #00000033, 
+  0px 4px 5px 0px #00000022,
+  0px 1px 10px 0px #00000022;
+}
+
+.smui-btn.smui-contained.smui-pressed {
+  box-shadow: 0px 5px 5px -3px #00000033,
+    0px 8px 10px 1px #00000022,
+    0px 3px 14px 2px #00000022;
+}
+
+
+
+.smui-btn.smui-outlined {
+  color: var(--primary);
+  border: 1px solid var(--primary);
+  border-radius: 3px;
+  opacity: .7;
+}
+
+.smui-btn.smui-text {
+  color: var(--primary);
+  opacity: .7;
+}
+
+.smui-btn.smui-outlined.smui-hover,
+.smui-btn.smui-text.smui-hover {
+  opacity: 1;
+}
+
+.smui-btn__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 3px;
+  z-index: 1;
+  opacity: 0;
+  transition: all .15s ease-in-out;
+}
+
+.smui-btn.smui-contained > .smui-btn__overlay {
+  background-color: var(--surface);
+}
+
+.smui-btn.smui-outlined > .smui-btn__overlay,
+.smui-btn.smui-text > .smui-btn__overlay {
+  background-color: var(--primary);
+}
+
+.smui-btn.smui-contained.smui-hover > .smui-btn__overlay {
+  opacity: 8%;
+}
+
+.smui-btn.smui-contained.smui-pressed > .smui-btn__overlay {
+  opacity: 16%;
+}
+
+.smui-btn.smui-outlined.smui-hover > .smui-btn__overlay,
+.smui-btn.smui-text.smui-hover > .smui-btn__overlay {
+  opacity: 4%;
+}
+
+.smui-btn.smui-outlined.smui-pressed > .smui-btn__overlay,
+.smui-btn.smui-text.smui-pressed > .smui-btn__overlay {
+  opacity: 8%;
+}
+
+
+
+
+
+
+
+

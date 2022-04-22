@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;700;900&family=Roboto+Slab:wght@100;400;700;900&family=Roboto:wght@100;400;700;900&display=swap');
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+
+.smui-card {
+  /* colors */
+  --primary: #000000;
+  --surface: #ffffff;
+  --gray-50: #f9fafb;
+  --gray-100: #f3f4f6;
+  --gray-200: #e5e7eb;
+  --gray-300: #d1d5db;
+  --gray-400: #9ca3af;
+  --gray-500: #6b7280;
+  --gray-600: #4b5563;
+  --gray-700: #374151;
+  --gray-800: #1f2937;
+  --gray-900: #111827;
+  /* box */
+  /* width: 21.5rem; */
+  /* height: 9.25rem; */
+  box-sizing: border-box;
+  padding: 1rem;
+  background-color: var(--surface);
+  border-radius: 4px;
+  box-shadow: 0 2px 1px -1px #00000022,
+    0 1px 1px 0px #00000022,
+    0 1px 3px 0px #00000022;
+}
+
+.smui-card.smui-hover,
+.smui-card.smui-focused {
+  box-shadow: 0px 2px 4px #00000033, 
+  0px 4px 5px 0px #00000022,
+  0px 1px 10px 0px #00000022;
+}
+
+.smui-card__title {
+  box-sizing: inherit;
+  margin: .25rem 0;
+  line-height: 1.5;
+  font-size: 1rem;
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  outline: none;
+}
+
+.smui-card__subtitle {
+  box-sizing: inherit;
+  margin: .25rem 0;
+  line-height: 1.43;
+  font-size: .875rem;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.smui-card__content {
+  box-sizing: inherit;
+  margin: .5rem 0;
+  font-size: .875;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.smui-card__divider {
+  margin-top: -4px;
+  margin-bottom: -4px;
+  margin-left: -1rem;
+  margin-right: -1rem;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  position: relative;
+  z-index: 1;
+}
+
+.smui-card__real-divider {
+  border-width: 0px 0px thin;
+  border-style: solid;
+  border-color: rgba(0, 0, 0, 0.12);
+}
