@@ -8,7 +8,7 @@
   --react-white: white;
   min-height: 100vh;
   display: grid;
-  grid-template-rows: 1fr 3fr auto;
+  grid-template-rows: 1fr 2fr auto;
 }
 
 .header {
@@ -21,7 +21,7 @@
 
 .header > .title {
   font-family: "Roboto Slab", serif; 
-  font-size: 2.5rem;
+  font-size: 2.75rem;
   font-weight: 700;
   color: var(--react-gray);
   

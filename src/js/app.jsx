@@ -146,7 +146,7 @@ export default class App extends React.Component {
             Reusable React Components
           </div>
           <div className="sub-title">
-            Guided by google Material Design principles.
+            Guided by google Material Design principles. 100% handcrafted.
           </div>
         </div>
         <div className="main">
