@@ -1,6 +1,76 @@
-.main {
+@import url('./norm.css');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;700&family=Roboto:wght@100;400;700&display=swap');
+
+.app {
+  --react-gray: #282c34;
+  --react-blue: #61dafb;
+  --react-white: white;
+  min-height: 100vh;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr 3fr auto;
+}
+
+.header {
+  /* font */
+  font-family: "Roboto", sans-serif; 
+  /* style */
+  color: var(--react-white);
+  background-color: var(--react-gray);
+  /* layout */
+  display: grid;
+  align-items: center;
+  align-content: center;
+  justify-items: center;
+}
+
+.header > .title {
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+.header > .sub-title {
+  font-size: 1rem;
+  font-weight: 100;
+}
+
+.main {
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+}
+
+.card-section,
+.textfield-section,
+.button-section {
+  padding: 1rem;
+  display: grid;
+  grid-template-rows: 1fr 3rem;
   align-items: center;
   justify-items: center;
+}
+
+.tag {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1.5rem;
+  font-weight: 100;
+  color: var(--react-gray);
+}
+
+.smui-textfield.smui-custom,
+.smui-card.smui-custom {
+  min-width: 9.5rem;
+}
+
+.smui-btn.smui-custom {
+  min-width: 6rem;
+  margin: 1rem;
+}
+
+.button-section {
+  border-left: 1px solid rgba(0, 0, 0, .12);
+}
+
+.card-section {
+  border-right: 1px solid rgba(0, 0, 0, .12);
 }

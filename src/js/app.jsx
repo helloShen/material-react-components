@@ -18,19 +18,45 @@ const SHRINE = { primary: '#442c2e', surface: '#fedbd0' };
 const THEME = [MUI, MATERIAL, CRANE, FORTNIGHTLY, RALLY, POSIVIBE, SHRINE];
 
 function ButtonSection({ primary, surface, handleClick }) {
+  const style = { width: '9.5rem' };
   return (
     <div className="button-section">
-      <Button
-        primary={primary}
-        surface={surface}
-        variant="contained"
-        size="medium"
-        clickCallback={handleClick}
-      >
-        click me
-      </Button>
+      <div className="buttons">
+        <Button
+          primary={primary}
+          surface={surface}
+          variant="contained"
+          size="medium"
+          clickCallback={handleClick}
+          style={style}
+        >
+          click me
+        </Button>
+        <Button
+          primary={primary}
+          surface={surface}
+          variant="outlined"
+          size="medium"
+          clickCallback={handleClick}
+          style={style}
+        >
+          toggle
+        </Button>
+        <Button
+          primary={primary}
+          surface={surface}
+          variant="text"
+          size="medium"
+          clickCallback={handleClick}
+          style={style}
+        >
+          theme
+        </Button>
+      </div>
+      <div className="tag">
+        &lt;Button&gt;
+      </div>
     </div>
-
   );
 }
 
@@ -45,6 +71,9 @@ function TextFieldSection({ primary, text, handleChange }) {
         pattern="^[\w\.-]+@[\w-]+\.[\w-]{2,}$"
         handleChange={handleChange}
       />
+      <div className="tag">
+        &lt;TextField&gt;
+      </div>
     </div>
   );
 }
@@ -58,7 +87,7 @@ function CardSection({ primary, surface, email }) {
       >
         <card.CardMain>
           <card.CardAvatar>
-            <img src={Avatar} />
+            <img src={Avatar} alt="avatar" />
           </card.CardAvatar>
           <div>
             <card.CardTitle>SHEN</card.CardTitle>
@@ -70,6 +99,9 @@ function CardSection({ primary, surface, email }) {
           Edit the email above through the TextField component.
         </card.CardContent>
       </Card>
+      <div className="tag">
+        &lt;Card&gt;
+      </div>
     </div>
   );
 }
@@ -80,8 +112,8 @@ export default class App extends React.Component {
     this.handleClick = this.handleClick.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.state = {
-      idx: 0,
-      theme: THEME[0],
+      idx: 1,
+      theme: THEME[1],
       email: 'hireme.shen@gmail.com',
     };
   }
@@ -109,11 +141,19 @@ export default class App extends React.Component {
     const { primary, surface } = theme;
     return (
       <div className="app">
+        <div className="header">
+          <div className="title">
+            Handcrafted React Components
+          </div>
+          <div className="sub-title">
+            Implementing google Material Design principles.
+          </div>
+        </div>
         <div className="main">
-          <ButtonSection
+          <CardSection
             primary={primary}
             surface={surface}
-            handleClick={this.handleClick}
+            email={email}
           />
           <TextFieldSection
             primary={primary}
@@ -121,13 +161,16 @@ export default class App extends React.Component {
             pattern="/^[\w\.-]+@[\w-]+\.[\w-]{2,}$/g"
             handleChange={this.handleChange}
           />
-          <CardSection
+          <ButtonSection
             primary={primary}
             surface={surface}
-            email={email}
+            handleClick={this.handleClick}
           />
         </div>
-        <Footer />
+        <Footer
+          sourceCode="https://github.com/helloShen/material-react-components"
+          githubLogo="black"
+        />
       </div>
     );
   }

@@ -20,12 +20,27 @@
   /* height: 9.25rem; */
   max-width: 21.5rem;
   box-sizing: border-box;
+  position: relative;
   padding: 1rem;
   background-color: var(--primary);
   border-radius: 4px;
   box-shadow: 0 2px 1px -1px #00000022,
     0 1px 1px 0px #00000022,
     0 1px 3px 0px #00000022;
+  transition: all .15s ease-in-out;
+}
+
+.smui-card__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+  z-index: 1;
+  background-color: #ffffff;
+  opacity: 0;
+  transition: all .15s ease-in-out;
 }
 
 .smui-card.smui-hover,
@@ -33,6 +48,11 @@
   box-shadow: 0px 2px 4px #00000033, 
   0px 4px 5px 0px #00000022,
   0px 1px 10px 0px #00000022;
+}
+
+.smui-card.smui-hover > .smui-card__overlay,
+.smui-card.smui-focused > .smui-card__overlay {
+  opacity: .12;
 }
 
 .smui-card__main {
@@ -79,15 +99,12 @@
   margin: .5rem 0;
   font-size: .875rem;
   font-weight: 400;
-  /* color: rgba(0, 0, 0, 0.6); */
   color: var(--surface);
 }
 
 .smui-card__divider {
   margin-top: -4px;
   margin-bottom: -4px;
-  margin-left: -1rem;
-  margin-right: -1rem;
   padding-top: 12px;
   padding-bottom: 12px;
   position: relative;
@@ -97,6 +114,6 @@
 .smui-card__real-divider {
   border-width: 0px 0px thin;
   border-style: solid;
-  /* border-color: rgba(0, 0, 0, 0.12); */
   border-color: var(--surface);
+  opacity: .24;
 }

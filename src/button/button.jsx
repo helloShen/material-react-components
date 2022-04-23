@@ -66,7 +66,7 @@ class Button extends React.Component {
       (primary && { '--primary': primary }),
       (surface && { '--surface': surface }),
     );
-    let classNames = 'smui-btn';
+    let classNames = 'smui-btn smui-custom';
     if (variant) {
       switch (variant) {
         case 'contained':

@@ -53,7 +53,7 @@ export default class Card extends React.Component {
       disabled,
       error,
     } = this.state;
-    let classNames = 'smui-card';
+    let classNames = 'smui-card smui-custom';
     if (hover) classNames += ' smui-hover';
     const style = Object.assign(
       {},
@@ -69,6 +69,7 @@ export default class Card extends React.Component {
         onFocus={this.handleFocus}
         onBlur={this.handleBlur}
       >
+        <div className="smui-card__overlay" />
         { children }
       </div>
     );

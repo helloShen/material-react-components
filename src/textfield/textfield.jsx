@@ -17,7 +17,7 @@ class TextField extends React.Component {
     super(props);
     this.id = TextField.generateId();
     this.pattern = new RegExp(props.pattern, 'g');
-    this.error = `error: ${props.helper}`;
+    this.error = `Invalid: ${props.helper}`;
     this.handleFocus = this.handleFocus.bind(this);
     this.handleBlur = this.handleBlur.bind(this);
     this.handleMouseEnter = this.handleMouseEnter.bind(this);
@@ -76,7 +76,7 @@ class TextField extends React.Component {
   }
 
   isValid(content) {
-    return content.match(this.pattern);
+    return (this.pattern) ? content.match(this.pattern) : true;
   }
 
   render() {
@@ -96,7 +96,7 @@ class TextField extends React.Component {
     } = this.state;
     const id = `textfield-${this.id}`;
     let helperMessage = helper;
-    let classNames = 'smui-textfield';
+    let classNames = 'smui-textfield smui-custom';
     if (activated) classNames += ' smui-activated';
     if (focused) classNames += ' smui-focused';
     if (hover) classNames += ' smui-hover';

@@ -21,14 +21,16 @@
   /* size */
   --height: 3rem;
   --width: 17.5rem;
+  --padding-left: 1rem;
+  --padding-right: .75rem;
+  --inner-width: calc(var(--width) - calc(var(--padding-left) + var(--padding-right)));
   /* box */
   box-sizing: border-box;
   height: var(--height);
   width: var(--width);
-  /* max-width: var(--width); */
   padding: .5rem 0;
-  padding-left: 1rem;
-  padding-right: .75rem;
+  padding-left: var(--padding-left);
+  padding-right: var(--padding-right);
   position: relative;
   border-bottom: 1px solid var(--gray-2);
   border-top-left-radius: 3px;
@@ -44,6 +46,8 @@
 }
 
 .smui-textfield__label {
+  /* box */
+  width: var(--inner-width);
   /* font */
   font-family: "Roboto", sans-serif;
   font-size: 1rem;
@@ -65,9 +69,11 @@
   left: 1rem;
   height: 1rem;
   width: calc(var(--width) - 1.75rem);
+  /* box */
+  width: var(--inner-width);
   /* font */
   font-size: .75rem;
-  color: var(--gray-2);
+  color: var(--gray-3);
 }
 
 .smui-textfield.smui-hover {
@@ -125,7 +131,7 @@
   align-self: end;
   justify-self: start;
   /* style */
-  width: var(--width);
+  width: var(--inner-width);
   color: var(--gray-3);
   background-color: transparent;
   outline: none;
